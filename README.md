@@ -1,6 +1,6 @@
 # Bloom-Filter-App
 -- Implementaion of `Bloom Filter` datastructure.  
--- Showcase use of implemented bloomfilter to do lookup on a list of elements loaded from file on application startup.
+-- Use of implemented bloomfilter to do lookup on a list of elements loaded from file on application startup.
 
 ## About Bloomfilter
 Bloom filter is a probabilistic datastructure which gives only one piece of information, True or False based on whether the key is member of set or not. It’s an incredibly space efficient datastrucuture that is often used as a first line of defense in high performance caches. 
@@ -41,5 +41,32 @@ To make it gereric, in paper `Less Hashing, Same Performance : Building a Better
                   h1(x) and h2(x) are two hash functions and,
                   gi(x) is the generated hash function.
  ```       
+ 
+ ## Pre-requisite for this project
+ 1. Java - 11
+ 2. Gradle
+ 
+ # Initialize, Build and Run
+ 1. Checkout repo.
+ 2. There is already a sample data.txt file with 40 entries is present in resource path. You can modify this file and add or remove         entries.
+ 3. Based on the number of entries in the data.txt file and your desired false positivity, 
+      - modify properties(bloomfilter.expectedEntries and bloomfilter.falsePositiveProbability) in application.properties which will be         used to initialize bloomfilter on startup of application.
+ 4. once, the application starts bitset corresponding to hash values of all the entries in 'data.txt' will be set in bloomfilter and     
+    post which lookup can be made for entry in the bloomfilter. 
+ 5. run command `sh run-app.sh` which will start the application.
+
+ # Verify BloomFilter
+ Once, the application starts, you can make CURL request to verify if the entry is present or not in the data.txt file. 
+ Instead of performing lookup from data.txt file, application will use already initialized bloomfilter to perform lookup and respond 
+ back.
+
+```
+      curl -X GET http://localhost:8081/bloomfilter/verify/{entry}  
+           (replace 'entry' with the lookup value)
+```
+
+## Class file 
+Implementation class of bloom filter data structure, 
+   `BloomFilter.java` present at path `src/main/java/com/satyy/bloomfilter/datastructure`
  
 
