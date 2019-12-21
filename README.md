@@ -22,11 +22,11 @@ n - number of elements
 p - desired false positivity
 
 We can determine,
-
+```
 Size of Bitset, m = (-n * logp) / (log2)^2
 
 Number of hash functions, k = m//n (log2)
-
+```
 Using, these we can find the optimal number of Bitset size and the number of hashfunctions at the time of initializing bloomfilter.
 
 ## Hash Functions
