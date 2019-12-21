@@ -18,6 +18,7 @@ Also, the size of Bitset should be optimal and as having small size Bitset can i
 
 Based on the 'number of elements' going to be in bloomfilter and the 'desired false positivity', the required 'number of hash function' and 'size of BitSet' can be estimated.
 
+Assuming we know, 
 n - number of elements, 
 
 p - desired false positivity
