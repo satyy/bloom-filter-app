@@ -33,11 +33,11 @@ Using, these we can find the optimal number of Bitset size and the number of has
 
 Sometimes hashing can be time consuming. So we need to choose hash functions which takes not much time but gives effective value as it can affect performance of bloomfilter. Also, we need to generate 'k' different hash functions where 'k' depends on entry size and false probability and hence can vary for each usecase.
 To make it gereric, in paper `Less Hashing, Same Performance : Building a Better Bloom Filter` it has been described how 'two hash functions' can be used to genereate 'k' different hash functions.
-        ```
+ ```
         gi(x) = h1(x) + ih2(x);                 
             where i = 1...k,
                   h1(x) and h2(x) are two hash functions and,
                   gi(x) is the generated hash function.
-        ```       
+ ```       
  
 
