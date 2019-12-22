@@ -1,6 +1,6 @@
 # Bloom-Filter-App
--- Implementaion of `Bloom Filter` datastructure.  
--- Use of bloomfilter to perform lookup on a set of elements(loaded from a file).
+- Implementaion of `Bloom Filter` datastructure.  
+- Use of bloomfilter to perform lookup on a set of elements(loaded from a file).
 
 ## About Bloomfilter
 Bloom filter is a probabilistic datastructure which gives only one piece of information, True or False, based on whether the key is member of set or not. It’s an space efficient datastrucuture that is often used as a first line of defense in high performance caches in many applications, database etc. 
@@ -45,7 +45,7 @@ To make it gereric, i have generated hash functiion with the help of paper `Less
  1. Java-11
  2. Gradle
  
- # Initialize, Build and Run
+ ## Initialize, Build and Run
  1. Checkout repo.
  2. There is already a sample 40 entries 'data.txt' file present at 'resource' path. You can modify this file to add or remove entries.
  3. Based on the number of entries in the data.txt file and your desired false positivity for the bloomfilter, 
@@ -56,7 +56,7 @@ To make it gereric, i have generated hash functiion with the help of paper `Less
  4. run command `sh run-app.sh` which will start the application.
  5. Once the application starts, bloomfilter's BitSet will be initialized using the generated hash values for each of the entries in 'data.txt' after which, lookup can be made to verify existense of any entry in the set.
 
- # Verify BloomFilter
+ ## Verify BloomFilter
  Once, the application starts, you can make CURL request to verify if the entry is present or not in the data.txt file. 
  Instead of performing lookup from data.txt file, application will use already initialized bloomfilter as cache to perform lookup and respond back.
 
