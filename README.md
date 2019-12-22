@@ -45,7 +45,7 @@ To make it gereric, i have generated hash functiion with the help of paper `Less
  1. Java-11
  2. Gradle
  
- # Initialize, Build and Run
+ ## Initialize, Build and Run
  1. Checkout repo.
  2. There is already a sample 40 entries 'data.txt' file present at 'resource' path. You can modify this file to add or remove entries.
  3. Based on the number of entries in the data.txt file and your desired false positivity for the bloomfilter, 
@@ -56,7 +56,7 @@ To make it gereric, i have generated hash functiion with the help of paper `Less
  4. run command `sh run-app.sh` which will start the application.
  5. Once the application starts, bloomfilter's BitSet will be initialized using the generated hash values for each of the entries in 'data.txt' after which, lookup can be made to verify existense of any entry in the set.
 
- # Verify BloomFilter
+ ## Verify BloomFilter
  Once, the application starts, you can make CURL request to verify if the entry is present or not in the data.txt file. 
  Instead of performing lookup from data.txt file, application will use already initialized bloomfilter as cache to perform lookup and respond back.
 
@@ -68,6 +68,6 @@ To make it gereric, i have generated hash functiion with the help of paper `Less
 ## Class file 
 Implementation class for bloom filter data structure, 
 ```
-BloomFilter.java present at path `src/main/java/com/satyy/bloomfilter/datastructure`
+BloomFilter.java at 'src/main/java/com/satyy/bloomfilter/datastructure'
 ```
 
